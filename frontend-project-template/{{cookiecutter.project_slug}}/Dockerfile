@@ -1,4 +1,4 @@
-FROM python:{{cookicutter.python_min_version}}-slim
+FROM python:{{ cookiecutter.python_min_version }}-slim
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8 test=test COVERAGE_FILE=/app/.coverage
 ENV POETRY_VIRTUALENVS_CREATE=false
