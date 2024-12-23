@@ -35,9 +35,9 @@ repos:
         additional_dependencies: ["bandit[toml]"]
   - repo: local
     hooks:
-      - id: unittest
-        name: unittest
-        entry: env PYTHONPATH=${PYTHONPATH}:./src/:./tests pytest tests
+      - id: pytest
+        name: pytest
+        entry: poetry run poe test
         language: system
         'types': [python]
         pass_filenames: false
