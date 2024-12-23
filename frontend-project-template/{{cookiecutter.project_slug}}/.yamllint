@@ -1,0 +1,22 @@
+ignore: |
+  .vscode/
+  .idea/
+
+extends: default
+
+rules:
+  document-start:
+    present: false
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+    level: warning
+  empty-lines:
+    max: 5
+    level: warning
+  line-length: disable
+  comments: disable
+  comments-indentation: {}
+  truthy: disable
+  trailing-spaces: {}
+  new-line-at-end-of-file: disable

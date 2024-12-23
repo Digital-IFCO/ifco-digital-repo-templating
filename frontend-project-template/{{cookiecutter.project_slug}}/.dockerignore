@@ -1,0 +1,7 @@
+../README.md
+.gitignore
+requirements.txt
+venv
+.venv
+.coverage
+coverage.xml
