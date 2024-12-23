@@ -1,2 +1,3 @@
 # ifco-digital-repo-templating
-Templates for kick a new repo using cookiecutter
+
+Templates to kick off a new repo using cookiecutter
