@@ -1,0 +1,12 @@
+{
+    "project_name": "New Python Vanilla Project",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "project_snake_case": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "python_full_version": "3.12.7",
+    "python_min_version": "3.12",
+    "version": "0.0.0",
+    "autor": "Your name",
+    "email": "{{ cookiecutter.autor.lower().replace(' ', '.') }}@ifco.com",
+    "description": "The short description of the project",
+    "git_url": "git@github.com:Digital-IFCO/{{cookiecutter.project_slug}}.git"
+}
