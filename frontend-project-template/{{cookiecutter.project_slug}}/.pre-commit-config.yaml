@@ -21,12 +21,12 @@ repos:
       - id: ruff
         types_or: [python, pyi]
         args: [--fix]
-        files: "^(jobs)/.*\\.py$"
+        files: "^(src)/.*\\.py$"
   - repo: https://github.com/psf/black
     rev: 23.1.0
     hooks:
       - id: black
-        files: "^(jobs)/.*\\.py$"
+        files: "^(src)/.*\\.py$"
   - repo: https://github.com/PyCQA/bandit
     rev: 1.7.10
     hooks:
