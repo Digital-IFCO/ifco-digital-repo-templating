@@ -7,13 +7,11 @@ This repository contains multiple Cookiecutter templates to streamline project i
 To generate a new project using one of the available templates, use the following command:
 
 ```sh
-cookiecutter https://github.com/Digital-IFCO/ifco-digital-repo-templating.git --directory frontend-project-template -o ifco-digital-ops-washing-app
+cookiecutter https://github.com/Digital-IFCO/ifco-digital-repo-templating.git --directory frontend-project-template
 ```
 
 ### Parameters:
 - `--directory frontend-project-template`: Specifies the template to use.
-- `-o ifco-digital-ops-washing-app`: Defines the output directory where the generated project will be stored.
-
 ## Available Templates
 
 The repository contains multiple templates. To explore them, check the directory structure or visit the GitHub repository.

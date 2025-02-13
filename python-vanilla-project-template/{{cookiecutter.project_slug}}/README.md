@@ -4,9 +4,8 @@
 
 ## Requirements
 
-* poetry
+* uv
 * docker
-* python version {{cookiecutter.python_full_version}}
 
 #### Docker
 
@@ -16,7 +15,7 @@ Build the image with `docker build -t {{cookiecutter.project_slug}} .`
 
 Run Unit tests with `docker run --name "{{cookiecutter.project_slug}}-container" --entrypoint /app/scripts/build.sh {{cookiecutter.project_slug}}`
 
-## Execution
+## Dependencies installation
 
-`poe run`
+`uv sync`
 
