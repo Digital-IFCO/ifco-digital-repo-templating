@@ -22,7 +22,7 @@ dev = [
 [tool.poe.tasks]
 "run" = "env PYTHONPATH=src uv run python -m streamlit run src/frontend/app.py"
 "init" = "sh -c 'pre-commit install && pre-commit run --all-files'"
-test = "pytest tests"
+test = "env PYTHONPATH=src pytest tests"
 "test:coverage" = "sh -c 'poe coverage:erase && poe coverage:run ; poe coverage:combine ; poe coverage:report'"
 "test:coverage:html" = "sh -c 'poe coverage:erase && poe coverage:run ; poe coverage:combine ; poe coverage:report ; poe coverage:report:html'"
 "coverage:erase" = "coverage erase"
