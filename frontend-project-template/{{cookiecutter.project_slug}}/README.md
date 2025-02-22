@@ -4,7 +4,7 @@
 
 ## Requirements
 
-* poetry
+* uv
 * docker
 * python version {{cookiecutter.python_full_version}}
 
@@ -12,9 +12,15 @@
 
 Setup requires that you already have docker installed on your machine.
 
+Create .env file `cp .env.dist .env`
+
 Build the image with `docker build -t {{cookiecutter.project_slug}} .`
 
 Run Unit tests with `docker run --name "{{cookiecutter.project_slug}}-container" --entrypoint /app/scripts/build.sh {{cookiecutter.project_slug}}`
+
+## Install Dependencies
+
+`uv sync`
 
 ## FrontEnd app execution
 

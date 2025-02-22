@@ -1,32 +1,29 @@
 FROM python:{{ cookiecutter.python_min_version }}-slim
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8 test=test COVERAGE_FILE=/app/.coverage
-ENV POETRY_VIRTUALENVS_CREATE=false
 
 RUN mkdir /app \
     && apt-get update \
     && apt-get install -y --no-install-recommends unzip curl gcc \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd -r app \
-    && useradd -r -m -g app app \
-    && pip install --upgrade --no-cache-dir pip \
-    && pip install --no-cache-dir poetry==1.5.1
+    && useradd -r -m -g app app
 
-COPY pyproject.toml poetry.lock /app/
+RUN pip install --upgrade --no-cache-dir pip uv
 
-RUN cd /app \
-    && poetry install --with dev --no-root
+COPY pyproject.toml uv.lock /app/
+
+WORKDIR /app
+RUN uv sync
 
 COPY . /app
+
 RUN chmod +x -R /app \
-    && chown -R app:app /app \
-    && cd /app \
-    && poetry install --only-root
+    && chown -R app:app /app
 
 USER app
-
 EXPOSE 8501
+WORKDIR /app/
 
-WORKDIR /app/src/frontend/
-
-ENTRYPOINT ["streamlit", "run", "app.py"]
+ENV PYTHONPATH=src
+ENTRYPOINT ["uv", "run", "python", "-m", "streamlit", "run", "src/frontend/app.py"]
