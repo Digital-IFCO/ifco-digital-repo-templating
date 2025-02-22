@@ -1,5 +1,4 @@
 from argparse import ArgumentParser
-from backend.sum import sum_values
 from common.logger import setup_logger
 from common.yaml_parser import ConfigParser
 import streamlit as st
@@ -9,22 +8,16 @@ import common.config as config
 
 
 def run(config_file: str):
-
     logger = setup_logger()
 
     if config.config is None:
         logger.info("Parsing app config")
         config_parser = ConfigParser(file_path=config_file)
         config.config = config_parser.parse()
-    
+
     set_page_config()
     side_bar = SideBar()
     side_bar.render()
-
-    if st.button("Calculate sum"):
-        side_bar.validate_model()
-        sum_result = sum_values(side_bar.model)
-        st.write(f"Sum of values: {sum_result}")
 
 
 if __name__ == "__main__":

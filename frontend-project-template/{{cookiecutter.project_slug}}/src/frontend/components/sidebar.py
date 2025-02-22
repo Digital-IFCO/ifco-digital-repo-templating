@@ -1,7 +1,6 @@
 import os
 import streamlit as st
 
-from frontend.models.sidebar import SideBarModel
 from frontend.page.home import home
 
 
@@ -16,20 +15,15 @@ class SideBar:
             home, title="Home", icon=":material/home:", default=True
         )
 
+        page_2 = st.Page(
+            home, title="Page 2", icon=":material/home:", url_path="page_2"
+        )
+
         pg = st.navigation(
             [
                 home_,
+                page_2
             ],
             expanded=True,
         )
         pg.run()
-
-        self.sidebar = st.sidebar
-        self.first_number = self.sidebar.number_input("Enter a number")
-        self.second_number = self.sidebar.number_input("Enter another number")
-
-    def validate_model(self):
-        self.model = SideBarModel(
-            first_number=self.first_number,
-            second_number=self.second_number
-        )
