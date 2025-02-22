@@ -18,8 +18,6 @@ def run(config_file: str):
         config.config = config_parser.parse()
     
     set_page_config()
-    st.title("FrontEnd frontend_app template: Work in progress...")
-
     side_bar = SideBar()
     side_bar.render()
 
