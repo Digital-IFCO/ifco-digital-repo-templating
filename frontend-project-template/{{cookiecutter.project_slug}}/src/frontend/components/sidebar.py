@@ -7,7 +7,7 @@ from frontend.page.home import home
 class SideBar:
     def render(self):
         logo_path = os.path.abspath(
-            os.path.join(os.path.dirname(__file__), "..", "assets", "green_rpc.png")
+            os.path.join(os.path.dirname(__file__), "..", "assets", "ifco-logo.svg")
         )
         cliq_logo_sidebar = logo_path
         st.logo(cliq_logo_sidebar)
