@@ -10,6 +10,8 @@ dependencies = [
     "pydantic>=2.10",
 ]
 
+
+
 [dependency-groups]
 dev = [
     "coverage==7.1.0",
@@ -18,6 +20,9 @@ dev = [
     "pre-commit>=3.3.3",
     "pytest>=8.3.4",
 ]
+
+[tool.uv]
+package = true
 
 [tool.poe.tasks]
 "run" = "env PYTHONPATH=src uv run python -m streamlit run src/frontend/app.py"
