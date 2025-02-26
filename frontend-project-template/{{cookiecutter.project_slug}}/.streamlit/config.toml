@@ -8,5 +8,5 @@ gatherUsageStats = false
 
 [server]
 headless = true
-fileWatcherType = "none"
+fileWatcherType = "auto"
 runOnSave = false
