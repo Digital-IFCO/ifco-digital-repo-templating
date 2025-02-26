@@ -154,3 +154,6 @@ chromedriver
 
 # Jenkins
 .jenkins_params
+
+#
+.databricks
