@@ -36,4 +36,12 @@ In section `[server]`
 
 Or run the streamlit app using `poe dev`
 
+## Databricks Apps deployment
 
+Create the `requirements.txt` using `uv pip compile pyproject.toml -o requirements.txt`   
+
+The `app.yaml` contains the command Databricks executes.
+
+More detail see: 
+- https://learn.microsoft.com/en-us/azure/databricks/dev-tools/databricks-apps/app-development
+- https://www.databricks.com/product/pricing/compute-for-apps
