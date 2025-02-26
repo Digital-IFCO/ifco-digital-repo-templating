@@ -25,6 +25,7 @@ dev = [
 package = true
 
 [tool.poe.tasks]
+"dev" = "env PYTHONPATH=src uv run python -m streamlit run src/frontend/app.py --server.runOnSave=True --server.fileWatcherType='auto'"
 "run" = "env PYTHONPATH=src uv run python -m streamlit run src/frontend/app.py"
 "init" = "sh -c 'pre-commit install && pre-commit run --all-files'"
 test = "env PYTHONPATH=src pytest tests"
