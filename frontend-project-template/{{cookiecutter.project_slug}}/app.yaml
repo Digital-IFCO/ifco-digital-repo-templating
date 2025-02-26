@@ -1,0 +1,9 @@
+# see more details here: https://learn.microsoft.com/en-us/azure/databricks/dev-tools/databricks-apps/configuration
+command: ['python', '-m', 'streamlit', 'run', 'src/frontend/app.py']
+env:
+#   - name: 'DATABRICKS_WAREHOUSE_ID'
+#     value: '...'
+    - name: "STREAMLIT_GATHER_USAGE_STATS"
+      value: "false"
+    - name: PYTHONPATH # this is important to have!
+      value: "$PYTHONPATH:./src"
