@@ -28,3 +28,12 @@ Execution of Streamlit app:
 
 `poe run`
 
+In case you need auto-reload, change the following in `./.streamlit/config.toml`:
+
+In section `[server]`
+1. set `fileWatcherType = "auto"`
+2. set `runOnSave = true`
+
+Or run the streamlit app using `poe dev`
+
+
